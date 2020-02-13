@@ -1,0 +1,10 @@
+<!--pages/databaseGuide/databaseGuide.wxml-->
+<view class="container">
+  <!-- 导航 -->
+  <view class="list">
+    <view class="list-item">
+      <text class="request-text">返程登记</text>
+    </view>
+  </view>
+
+</view>

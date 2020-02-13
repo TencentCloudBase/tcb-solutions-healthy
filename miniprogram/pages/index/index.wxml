@@ -55,5 +55,11 @@
     </navigator>
   </view>
 
+  <!-- 健康打卡 -->
+  <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>健康打卡</text>
+    </navigator>
+  </view>
 
 </view>

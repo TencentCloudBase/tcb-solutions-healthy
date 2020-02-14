@@ -1,34 +1,42 @@
 // pages/databaseGuide/databaseGuide.js
 
 const app = getApp()
-
+var list = []
 Page({
-
-  data: {
-   
+  data:{
+    vehicle: [
+      { value: '高铁', checked: false },
+      { value: '飞机', checked: false },
+      { value: '巴事', checked: false},
+    ],
+     items: [
+      { name: '是', value: 1 },
+       { name: '否', value: 0 }
+    ],
+    checkedArr:[],
+    isDanger:0
   },
-
-  onLoad: function (options) {
-    if (app.globalData.openid) {
-      this.setData({
-        openid: app.globalData.openid
-      })
-    }
+  checkboxChange(e){
+    this.setData({
+      checkedArr: e.detail.value
+    })
   },
-
-  goHome: function() {
-    const pages = getCurrentPages()
-    if (pages.length === 2) {
-      wx.navigateBack()
-    } else if (pages.length === 1) {
-      wx.redirectTo({
-        url: '../index/index',
-      })
-    } else {
-      wx.reLaunch({
-        url: '../index/index',
-      })
+  radioChange(e){
+    this.setData({
+      isDanger:e.detail.value-0
+    })
+  },
+  formSubmit: function (e) {
+    let form =  e.detail.value
+    for(let key in form){
+      if (!form[key]){
+        wx.showToast({
+          title: '请先完成表格',
+          icon:'none',
+          duration:2000
+        })
+        return
+      }
     }
   }
-
 })

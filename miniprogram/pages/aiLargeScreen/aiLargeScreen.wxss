@@ -1,0 +1,3 @@
+/* pages/databaseGuide/databaseGuide.wxss */
+
+@import "../../style/guide.wxss";

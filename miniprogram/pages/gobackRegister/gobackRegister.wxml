@@ -1,10 +1,175 @@
-<!--pages/databaseGuide/databaseGuide.wxml-->
-<view class="container">
-  <!-- 导航 -->
-  <view class="list">
-    <view class="list-item">
-      <text class="request-text">返程登记</text>
+<view class="page-background">
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd" style="width: 90%;margin: auto;">
+        <view class="page__title" style="margin:auto;width:80px;color:#fff;font-size: 20px;">返程登记</view>
+        <view class="page__desc" style="padding:16px;color:#fff;">注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色</view>
+</view>
+
+</view>
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<form bindsubmit="onAdd" style="width:100%">
+    <view class="page__bd" style="width: 90%;margin: auto;background-color: #F0FFF0;border-radius: 20px;">
+
+        <view class="weui-cells__title" style="height:5px;"></view>
+        <view class="weui-cells__title">1.姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="name" placeholder="请输入姓名" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">2.工作地点</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="place" placeholder="请输入工作地点" />
+                </view>
+            </view>
+        </view>
+
+
+        <view class="weui-cells__title">3.目前是否在湖北省内</view>
+        <view>
+            <radio-group class="radio-group"   bindchange="goHBRadioChange">
+                <label wx:for="{{radioItems}}"  wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">4.目前是否在工作地/校内</view>
+        <view>
+            <radio-group class="radio-group" bindchange="workPlaceRadioChange">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">5.假期去过的省市</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="wentprovinces" placeholder="请输入假期去过的省市" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">6.何时返程</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <picker mode="date" name="date" value="{{date}}" start="2019-01-01" end="{{date}}" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">7.何处返程</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd" style="margin-left:16px;">
+                    <picker mode="region" bindchange="changeReginChange" value="{{index}}">
+                        <view class="weui-select weui-select_in-select-after">{{region[0]}} - {{region[1]}} - {{region[2]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">8.返程所乘交通工具</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd" style="margin-left:16px;">
+                    <picker bindchange="bindtrafficChange" name="traffic" value="{{trafficIndex}}" range="{{traffic}}">
+                        <view class="weui-select weui-select_in-select-after" >{{traffic[trafficIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">9.返程所乘车次/航班</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="trainnumber" placeholder="请输入车次/航班" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">10.过去14天是否与确诊病例乘过同一交通工具</view>
+        <view>
+            <radio-group class="radio-group" bindchange="withIllTakeRadioChange">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">11.过去14天是否密切接触过各地确诊病例或定点医院医务人员</view>
+        <view>
+            <radio-group class="radio-group" bindchange="contractillRadioChange">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+
+        <view class="weui-cells__title">12.过去14天是否有身体不适</view>
+        <view>
+            <radio-group class="radio-group" bindchange="bodyStatusRadioChange">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">13.目前有无咳嗽，发热等症状</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="bodystatusinfo" placeholder="请输入身体状况" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">14.同行人员/亲戚/近期接触人员中有无 咳嗽，发热等症状/确诊患者</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="otherManBodyInfo" placeholder="请输入同行人员/亲戚/近期接触人员身体状况" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">15.目前居住小区是否有确诊病例</view>
+        <view>
+            <radio-group class="radio-group" bindchange="areasHaveRadioChange">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
+                    <radio value="{{item.value}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">16.其他备注信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="remark" placeholder="请输入备注信息" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area" style="margin: 28px 16px 8px;padding-bottom: 20px;">
+            <button class="weui-btn" type="primary" form-type="submit" style="background-color: #1E90FF;">确定</button>
+        </view>
     </view>
-  </view>
+     </form>
+</view>
 
 </view>

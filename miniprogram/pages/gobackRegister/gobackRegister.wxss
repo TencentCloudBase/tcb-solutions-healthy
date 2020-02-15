@@ -1,3 +1,44 @@
 /* pages/databaseGuide/databaseGuide.wxss */
 
 @import "../../style/guide.wxss";
+
+.page-background{
+  background-color: #1E90FF
+}
+
+
+/* 单选框 */
+.radio-group label {
+    display: block;
+    height: 56rpx;
+    line-height: 26rpx;
+    font-size: 32rpx;
+    box-sizing: border-box;
+    padding: 10rpx;
+    margin-left:10px;
+}
+
+radio {
+    width: 38rpx;
+}
+
+/* 单选框未选中 */
+radio .wx-radio-input {
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 50%;
+}
+
+
+/* 单选框选中后对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 44rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx;   
+    color:#fff;
+    background-color: #0000CD;
+    border-color: #0000CD;
+}

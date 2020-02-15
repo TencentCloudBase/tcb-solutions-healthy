@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "返程登记",
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#1E90FF"
 }

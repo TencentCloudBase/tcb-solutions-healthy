@@ -11,6 +11,8 @@
 | name     | 姓名 |        |
 | place     | 工作地点：/所在校区 |        |
 | date     | 返程时间 |        |
+| gobackwhere     | 何处返程 |        |
+| wentprovinces     | 假期你所去过的省市 |        |
 | traffic     | 返程所乘交通工具 |    0-铁路 1-飞机 2-客运 3-自驾 4-渡轮    |
 | trainnumber     | 返程所乘车次/航班 |        |
 | bodystatusinfo     | 目前有无咳嗽，发热等症状 |        |
@@ -22,8 +24,7 @@
 | contractillFlag     | 过去14天是否密切接触过各地确诊病例或定点医院医务人员 |    0-是 1-否    |
 | bodyStatusFlag     | 过去14天是否有身体不适 |    0-是 1-否    |
 | goHareasHaveFlagBFlag     | 目前居住小区是否有确诊病例 |    0-是 1-否    |
-| gobackwhere     | 何处返程 |        |
-| holidaygowhere     | 假期你所去过的省市 |        |
+
 
 
 

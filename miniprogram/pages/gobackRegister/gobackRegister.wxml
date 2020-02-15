@@ -74,8 +74,8 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__bd" style="margin-left:16px;">
-                    <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{provinces}}">
-                        <view class="weui-select weui-select_in-select-after">{{provinces[countryIndex]}}</view>
+                    <picker mode="region" bindchange="changeReginChange" value="{{index}}">
+                        <view class="weui-select weui-select_in-select-after">{{region[0]}} - {{region[1]}} - {{region[2]}}</view>
                     </picker>
                 </view>
             </view>
@@ -85,7 +85,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__bd" style="margin-left:16px;">
-                    <picker bindchange="bindCountryChange" name="traffic" value="{{trafficIndex}}" range="{{traffic}}">
+                    <picker bindchange="bindtrafficChange" name="traffic" value="{{trafficIndex}}" range="{{traffic}}">
                         <view class="weui-select weui-select_in-select-after" >{{traffic[trafficIndex]}}</view>
                     </picker>
                 </view>
@@ -160,7 +160,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell ">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" name="remark" placeholder="请输入身体状况" />
+                    <input class="weui-input" name="remark" placeholder="请输入备注信息" />
                 </view>
             </view>
         </view>

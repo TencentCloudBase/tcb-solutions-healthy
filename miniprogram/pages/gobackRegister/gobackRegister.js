@@ -5,7 +5,6 @@ const app = getApp()
 Page({
 
   data: {
-
     goHBradioItems: [ //是否去过湖北
       { name: '是', value: '0' },
       { name: '否', value: '1'}
@@ -34,9 +33,11 @@ Page({
       { name: '火车', value: '0', checked: true },
       { name: '飞机', value: '1' }
     ],
-
     traffic: ["铁路", "飞机", "客运", "自驾", "渡轮"], //铁路/飞机/客运/自驾/渡轮
-    trafficIndex: 0
+    trafficIndex: 0,
+    array: ['美国', '中国', '巴西', '日本'],
+    region: ['湖北省', '武汉市', '江汉区'],
+    index: 0
   },
 
   onLoad: function (options) {
@@ -63,7 +64,7 @@ Page({
     console.log("2.工作地点：/所在校区:" + e.detail.value.place);
     console.log("3.目前是否在湖北省内:" + this.goHBFlag);
     console.log("4.目前是否在工作地/校内:" + this.workPlaceFlag);
-    console.log("5.选择假期你所去过的省市:" + "------------------------------"); 
+    console.log("5.选择假期你所去过的省市:" + e.detail.value.wentprovinces); 
     console.log("6.何时返程：(Picker)日期:" + e.detail.value.date);
     console.log("7.何处返程：(Picker)省市:" + "---------------------");
     console.log("8.返程所乘交通工具： 铁路/飞机/客运/自驾/渡轮:" + e.detail.value.traffic);
@@ -85,7 +86,7 @@ Page({
       return;
     }
 
-    var text = e.detail.value.name + e.detail.value.place + e.detail.value.trainnumber + e.detail.value.bodystatusinfo + e.detail.value.otherManBodyInfo + e.detail.value.remark
+    var text = e.detail.value.name + e.detail.value.place + e.detail.value.trainnumber + e.detail.value.bodystatusinfo + e.detail.value.otherManBodyInfo + e.detail.value.remark + e.detail.value.wentprovinces
     console.log("敏感字符检测内容：" + text)
     //敏感字符检测
     wx.cloud.init();
@@ -126,7 +127,10 @@ Page({
     var contractillFlag = this.contractillFlag
     var bodyStatusFlag = this.bodyStatusFlag
     var goHareasHaveFlagBFlag = this.areasHaveFlag
-
+    var wentprovinces = e.detail.value.wentprovinces
+    var gobackwhere = this.gobackwhere
+    
+    
     wx.showLoading({
       title: '信息提交中',
     })
@@ -141,6 +145,8 @@ Page({
         bodystatusinfo: bodystatusinfo,
         bodystatusinfo: bodystatusinfo,
         otherManBodyInfo: otherManBodyInfo,
+        wentprovinces: wentprovinces,
+        gobackwhere: gobackwhere,
         goHBFlag: goHBFlag,
         workPlaceFlag: workPlaceFlag,
         withIllTakeFlag: withIllTakeFlag,
@@ -191,7 +197,6 @@ Page({
     });
   },
 
-
   withIllTakeRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.withIllTakeFlag = e.detail.value
@@ -203,7 +208,6 @@ Page({
       withIllTakeRadioItems: radioItems
     });
   },
-
 
   contractillRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
@@ -242,6 +246,7 @@ Page({
   },
 
   bindDateChange: function (e) {
+    console.log('日期选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
@@ -250,6 +255,22 @@ Page({
     this.setData({
       time: e.detail.value
     })
+  },
+
+  bindtrafficChange: function (e) {
+    console.log('交通工具选择改变，携带值为', e.detail.value)
+    this.setData({
+      trafficIndex: e.detail.value
+    })
+  },
+
+  // 选择省市区函数
+  changeReginChange(e) {
+    console.log("省市区选择发生变化,携带的值为：" +  e.detail.value);
+    this.gobackwhere = e.detail.value
+    this.setData({ 
+      region: e.detail.value 
+    });
   },
 
   goHome: function() {

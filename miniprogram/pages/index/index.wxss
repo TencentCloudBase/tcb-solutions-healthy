@@ -5,6 +5,7 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+   background-color: rgb(24,144,255);
 }
 
 .userinfo, .uploader, .tunnel {
@@ -62,18 +63,42 @@ page {
 }
 
 .uploader, .tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
+  height: 250rpx;
+  width: 100%;
+  padding: 0 0 0 80rpx;
+  flex-direction: row;
   align-items: flex-start;
   box-sizing: border-box;
+  border-radius: 20rpx; 
+  background-color:rgb(64,169,255);
 }
 
+
 .uploader-text, .tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+  width: 250rpx;
+  line-height: 25rpx;
+  font-size: 40rpx;
+  margin-top: 100rpx;
+  text-align: left;
+  font-weight:bold;
+  color:  white;
+}
+
+.uploader-navigator{
+  width: 613rpx;
+  height: 250rpx;       
+  margin-left: 0.2%;  
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end; 
+}
+
+.uploader-img{
+  width: 400rpx;
+  height: 250rpx;   
+  display:flex;
+  justify-content: flex-end; 
+     
 }
 
 .uploader-container {
@@ -87,10 +112,6 @@ page {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
-}
 
 .tunnel {
   padding: 0 0 0 40rpx;
@@ -150,4 +171,43 @@ page {
   font-size: 24rpx;
   line-height: 36rpx;
   word-break: break-all;
+}
+
+
+.we-tab__panel {
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  height: 100%;
+  width:100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  padding:30rpx;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.index-headline-text {
+   width: 150rpx;
+  line-height: 20rpx;
+  font-size: 50rpx;
+  text-align: left;
+  font-weight:bold;
+  margin-top:50rpx;
+  margin-right: 400rpx;
+  color:  white;
+}
+
+.index-notes-text {
+  width: 150rpx;
+  line-height: 20rpx;
+  font-size: 35rpx;
+  margin-top:30rpx;
+  margin-right: 400rpx;
+  margin-bottom: 100rpx;
+  text-align:left;
+  color:  white;
 }

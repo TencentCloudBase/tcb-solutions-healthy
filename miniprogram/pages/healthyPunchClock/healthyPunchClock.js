@@ -11,7 +11,7 @@ Page({
     ],
      items: [
       { name: '是', value: 1 },
-       { name: '否', value: 0 }
+      { name: '否', value: 0 }
     ],
     checkedArr:[],
     isDanger:0
@@ -28,6 +28,7 @@ Page({
   },
   formSubmit: function (e) {
     let form =  e.detail.value
+    console.log(form)
     for(let key in form){
       if (!form[key]){
         wx.showToast({

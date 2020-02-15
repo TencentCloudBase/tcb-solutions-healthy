@@ -2,15 +2,15 @@
 
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__bd" style="width: 90%;margin: auto;">
-        <view class="page__title" style="margin:auto;width:80px;color:#fff;font-size: 20px;">返程登记</view>
-        <view class="page__desc" style="padding:16px;color:#fff;">注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色</view>
+        <view class="title">返程登记</view>
+        <view class="dec">注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色</view>
 </view>
 
 </view>
 
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
 <form bindsubmit="onAdd" style="width:100%">
-    <view class="page__bd" style="width: 90%;margin: auto;background-color: #F0FFF0;border-radius: 20px;">
+    <view class="page__bd" style="width: 90%;margin: auto;background-color: #F0FFF0;border-radius: 16px;">
 
         <view class="weui-cells__title" style="height:5px;"></view>
         <view class="weui-cells__title">1.姓名</view>

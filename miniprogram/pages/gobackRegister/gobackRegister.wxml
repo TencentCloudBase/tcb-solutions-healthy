@@ -35,7 +35,7 @@
         <view class="weui-cells__title">3.目前是否在湖北省内</view>
         <view>
             <radio-group class="radio-group"   bindchange="goHBRadioChange">
-                <label wx:for="{{goHBradioItems}}"  wx:key="{{index}}">
+                <label wx:for="{{radioItems}}"  wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>
@@ -44,7 +44,7 @@
         <view class="weui-cells__title">4.目前是否在工作地/校内</view>
         <view>
             <radio-group class="radio-group" bindchange="workPlaceRadioChange">
-                <label wx:for="{{workPlaceRadioItems}}" wx:key="{{index}}">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>
@@ -104,7 +104,7 @@
         <view class="weui-cells__title">10.过去14天是否与确诊病例乘过同一交通工具</view>
         <view>
             <radio-group class="radio-group" bindchange="withIllTakeRadioChange">
-                <label wx:for="{{withIllTakeRadioItems}}" wx:key="{{index}}">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>
@@ -113,7 +113,7 @@
         <view class="weui-cells__title">11.过去14天是否密切接触过各地确诊病例或定点医院医务人员</view>
         <view>
             <radio-group class="radio-group" bindchange="contractillRadioChange">
-                <label wx:for="{{contractillRadioItems}}" wx:key="{{index}}">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>
@@ -123,7 +123,7 @@
         <view class="weui-cells__title">12.过去14天是否有身体不适</view>
         <view>
             <radio-group class="radio-group" bindchange="bodyStatusRadioChange">
-                <label wx:for="{{bodyStatusRadioItems}}" wx:key="{{index}}">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>
@@ -150,7 +150,7 @@
         <view class="weui-cells__title">15.目前居住小区是否有确诊病例</view>
         <view>
             <radio-group class="radio-group" bindchange="areasHaveRadioChange">
-                <label wx:for="{{areasHaveRadioItems}}" wx:key="{{index}}">
+                <label wx:for="{{radioItems}}" wx:key="{{index}}">
                     <radio value="{{item.value}}" />{{item.name}}
                 </label>
             </radio-group>

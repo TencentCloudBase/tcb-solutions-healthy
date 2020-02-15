@@ -5,29 +5,9 @@ const app = getApp()
 Page({
 
   data: {
-    goHBradioItems: [ //是否去过湖北
+    radioItems: [ //是否去过湖北
       { name: '是', value: '0' },
       { name: '否', value: '1'}
-    ],
-    workPlaceRadioItems: [ //是否返回工作地
-      { name: '是', value: '0' },
-      { name: '否', value: '1'}
-    ],
-    withIllTakeRadioItems: [  //是否与病人同乘交通工具
-      { name: '是', value: '0' },
-      { name: '否', value: '1' }
-    ],
-    contractillRadioItems: [    // 是否接触过确认或疑似确诊患者
-      { name: '是', value: '0' },
-      { name: '否', value: '1' }
-    ],
-    bodyStatusRadioItems: [    // 是否接触过确认或疑似确诊患者
-      { name: '是', value: '0' },
-      { name: '否', value: '1' }
-    ],
-    areasHaveRadioItems: [    // 是否接触过确认或疑似确诊患者
-      { name: '是', value: '0' },
-      { name: '否', value: '1' }
     ],
     checkboxItems: [
       { name: '火车', value: '0', checked: true },
@@ -130,7 +110,6 @@ Page({
     var wentprovinces = e.detail.value.wentprovinces
     var gobackwhere = this.gobackwhere
     
-    
     wx.showLoading({
       title: '信息提交中',
     })
@@ -173,76 +152,50 @@ Page({
     })
   },
 
-  goHBRadioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value);
-    this.goHBFlag = e.detail.value
-    var radioItems = this.data.goHBradioItems;
+  radioChange: function (e) {
+    var radioItems = this.data.radioItems;
     for (var i = 0, len = radioItems.length; i < len; ++i) {
       radioItems[i].checked = radioItems[i].value == e.detail.value;
     }
     this.setData({
-      goHBradioItems: radioItems
+      radioItems: radioItems
     });
+  },
+
+  goHBRadioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value);
+    this.goHBFlag = e.detail.value
+    this.radioChange(e)
   },
 
   workPlaceRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.workPlaceFlag = e.detail.value
-    var radioItems = this.data.workPlaceRadioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
-    }
-    this.setData({
-      workPlaceRadioItems: radioItems
-    });
+    this.radioChange(e)
   },
 
   withIllTakeRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.withIllTakeFlag = e.detail.value
-    var radioItems = this.data.withIllTakeRadioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
-    }
-    this.setData({
-      withIllTakeRadioItems: radioItems
-    });
+    this.radioChange(e)
   },
 
   contractillRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.contractillFlag = e.detail.value
-    var radioItems = this.data.contractillRadioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
-    }
-    this.setData({
-      contractillRadioItems: radioItems
-    });
+    this.radioChange(e)
   },
 
   bodyStatusRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.bodyStatusFlag = e.detail.value
-    var radioItems = this.data.bodyStatusRadioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
-    }
-    this.setData({
-      bodyStatusRadioItems: radioItems
-    });
+    this.radioChange(e)
   },
 
   areasHaveRadioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.areasHaveFlag = e.detail.value
-    var radioItems = this.data.areasHaveRadioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
-    }
-    this.setData({
-      areasHaveRadioItems : radioItems
-    });
+    this.radioChange(e)
   },
 
   bindDateChange: function (e) {
@@ -251,6 +204,7 @@ Page({
       date: e.detail.value
     })
   },
+
   bindTimeChange: function (e) {
     this.setData({
       time: e.detail.value

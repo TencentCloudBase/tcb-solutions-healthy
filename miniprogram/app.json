@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/healthyPunchClock/healthyPunchClock",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",

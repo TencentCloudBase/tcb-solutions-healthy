@@ -1,10 +1,35 @@
 <!--pages/databaseGuide/databaseGuide.wxml-->
-<view class="container">
-  <!-- 导航 -->
-  <view class="list">
-    <view class="list-item">
-      <text class="request-text">健康打卡</text>
-    </view>
-  </view>
-
+<view class="title">
+  健康打卡
 </view>
+<view class="dec">
+  注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色
+</view>
+
+<form bindsubmit="formSubmit">
+<view class="form-list">
+
+  <text class="text">1、员工姓名</text>
+  <input class="input" name="name"></input>
+
+  <text class="text" >2、输入假期你所去过的省市</text>
+  <input class="input" name="city"></input>
+
+  <text class="text">3、交通工具</text>
+  <checkbox-group bindchange="checkboxChange" name="vehicle">
+    <label class="checkbox" wx:for="{{vehicle}}">
+      <checkbox checked="{{item.checked}}" value="{{item.value}}" color="#fff" />{{item.value}}
+    </label>
+  </checkbox-group>
+
+
+  <text class="text">4、过去14天是否与确诊患者病例乘过同一交通工具</text>
+  <radio-group class="radio-group" bindchange="radioChange" name="isDanger">
+    <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" color="#fff">
+      <text>{{item.name}}</text>
+    </radio>
+  </radio-group>
+</view>
+
+<button formType="submit" class="button">完成打卡</button>
+</form>

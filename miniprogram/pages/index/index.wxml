@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
 
-  <!-- 用户 openid -->
-  <view class="userinfo">
+<!-- 用户 openid -->
+  <!-- <view class="userinfo">
     <button 
       open-type="getUserInfo" 
       bindgetuserinfo="onGetUserInfo"
@@ -13,7 +13,7 @@
     <view class="userinfo-nickname-wrapper">
       <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
     </view>
-  </view>
+  </view> -->
 
 
   <!-- 上传图片 -->
@@ -60,26 +60,41 @@
     </navigator>
   </view>
     -->
+
+<!-- 首页介绍 -->
+ <view class="index-headline-text">     
+        <text>首页</text>
+    </view>
+
+ <view class="index-notes-text">     
+        <text>健康打卡</text>
+    </view>
+
+    		<view class="we-tab__panel"> 
   <!-- 返程登记 -->
   <view class="uploader">
-    <navigator url="../gobackRegister/gobackRegister" open-type="navigate" class="uploader-text">
-      <text>返程登记</text>
-    </navigator>
+    <navigator url="../gobackRegister/gobackRegister" open-type="navigate" class="uploader-navigator" >
+      <view class="uploader-text"> 返程登记</view>    
+      <image class='uploader-img' src='../../images/index-1.png'></image> 
+ </navigator>
   </view>
 
     <!-- 健康打卡 -->
     <view class="uploader">
-      <navigator url="../healthyPunchClock/healthyPunchClock" open-type="navigate" class="uploader-text">
-        <text>健康打卡</text>
-      </navigator>
-    </view>
+    <navigator url="../gobackRegister/gobackRegister" open-type="navigate" class="uploader-navigator" >
+      <view class="uploader-text"> 健康打卡</view>    
+      <image class='uploader-img' src='../../images/index-2.png'></image> 
+ </navigator>
+  </view>
 
-    <!-- 智慧大屏 -->
-    <view class="uploader">
-      <navigator url="../aiLargeScreen/aiLargeScreen" open-type="navigate" class="uploader-text">
-        <text>智慧大屏</text>
-      </navigator>
-    </view>
+    <!-- 打卡记录 -->
+     <view class="uploader">
+    <navigator url="../gobackRegister/gobackRegister" open-type="navigate" class="uploader-navigator" >
+      <view class="uploader-text"> 打卡记录</view>    
+      <image class='uploader-img' src='../../images/index-3.png'></image> 
+ </navigator>
+  </view>
 
 
+   </view>  
 </view>

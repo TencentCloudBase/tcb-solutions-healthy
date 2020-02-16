@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "",
+  "usingComponents": {
+    "weForm": "/components/weForm/weForm"
+  },
+  "navigationBarTitleText": "返程登记",
   "navigationBarBackgroundColor": "#1E90FF"
 }

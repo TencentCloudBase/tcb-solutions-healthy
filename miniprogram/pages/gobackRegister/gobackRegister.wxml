@@ -1,8 +1,10 @@
-<view class="page-background">
+<weForm form-data="{{formData}}"  bindonAdd="onAdd">
+</weForm>
+<!-- <view class="page-background">
 
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__bd" style="width: 90%;margin: auto;">
-        <view class="page__title" style="margin:auto;width:80px;color:#fff;font-size: 20px;">返程登记</view>
+        <view class="page__title" style="margin:auto;width:auto;color:#fff;font-size: 20px;">返程登记</view>
         <view class="page__desc" style="padding:16px;color:#fff;">注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色</view>
 </view>
 
@@ -172,4 +174,4 @@
      </form>
 </view>
 
-</view>
+</view> -->

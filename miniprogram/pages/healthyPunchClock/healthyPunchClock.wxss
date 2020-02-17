@@ -4,6 +4,8 @@ page{
   background-color: rgb(24,144,255);
   padding: 0 15rpx;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 .title{
   font-size: 55rpx;
@@ -17,14 +19,24 @@ page{
   font-size: 25rpx;
   line-height: 34rpx;
   text-align: center;
+  box-sizing: border-box;
+}
+.form-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+form{
+  flex: 1;
 }
 .form-list{
   background-color: rgb(230,247,255);
   border-radius: 16rpx;
   width: 100%;
-  height: 830rpx;
+  flex: 1;
   box-sizing: border-box;
-  padding:25rpx 15rpx 0 15rpx;
+  padding:25rpx 15rpx 25rpx 15rpx;
 }
 .text{
   display: block;
@@ -35,6 +47,14 @@ page{
   background-color: #fff;
   height: 60rpx;
 }
+.button{
+  background-color: #fff;
+  width: 100% !important;
+  margin: 40rpx 0 !important;
+  border-radius: 40rpx !important;
+}
+
+
 .picker{
   background-color: #fff;
   height: 60rpx;
@@ -49,8 +69,9 @@ checkbox-group{
 }
 
 radio .wx-radio-input{ 
-    height: 36rpx; 
-    width: 36rpx;
+    height: 28rpx; 
+    width: 28rpx;
+    border-radius: 50%;
  }
 /* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
 radio .wx-radio-input.wx-radio-input-checked {
@@ -65,14 +86,11 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   /* 去除对号 */
   content: ''; 
   /* background: #fff; */
-  width: 32rpx;
-  height: 32rpx;
-  border-radius: 50%;
+  text-align:center;
+  transform: translate(-50%,-50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
   background-color: #2792ff;
-}
-.button{
-  background-color: #fff;
-  width: 100% !important;
-  margin: 40rpx 0 !important;
-  border-radius: 40rpx !important;
 }

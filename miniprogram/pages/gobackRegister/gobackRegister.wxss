@@ -6,6 +6,29 @@
   background-color: #1E90FF
 }
 
+.dec{
+  padding:15rpx 20rpx;
+  color: #fff;
+  font-size: 25rpx;
+  line-height: 34rpx;
+  text-align: center;
+}
+.title{
+  font-size: 55rpx;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.weui-cell{
+  padding:0 16px;
+  font-size: 14px;
+}
+
+.weui-input{
+height: 26px;
+line-height: 26px;
+}
 
 /* 单选框 */
 .radio-group label {

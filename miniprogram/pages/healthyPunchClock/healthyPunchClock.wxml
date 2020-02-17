@@ -7,29 +7,37 @@
 </view>
 
 <form bindsubmit="formSubmit">
-<view class="form-list">
+  <view class="form-wrap">
+        
+    <scroll-view class="form-list" scroll-y="true">
 
-  <text class="text">1、员工姓名</text>
-  <input class="input" name="name"></input>
+      <text class="text">1、员工姓名</text>
+      <input class="input" name="name"></input>
 
-  <text class="text" >2、输入假期你所去过的省市</text>
-  <input class="input" name="city"></input>
+      <text class="text" >2、工作地点</text>
+      <input class="input" name="workPlace"></input>
 
-  <text class="text">3、交通工具</text>
-  <checkbox-group bindchange="checkboxChange" name="vehicle">
-    <label class="checkbox" wx:for="{{vehicle}}">
-      <checkbox checked="{{item.checked}}" value="{{item.value}}" color="#fff" />{{item.value}}
-    </label>
-  </checkbox-group>
+      <text class="text">3、过去14天是否有身体不适</text>
+      <radio-group class="radio-group" bindchange="radioChange" name="isDiscomfort">
+        <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" color="#fff">
+          <text>{{item.name}}</text>
+        </radio>
+      </radio-group>
 
 
-  <text class="text">4、过去14天是否与确诊患者病例乘过同一交通工具</text>
-  <radio-group class="radio-group" bindchange="radioChange" name="isDanger">
-    <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" color="#fff">
-      <text>{{item.name}}</text>
-    </radio>
-  </radio-group>
-</view>
+      <text class="text">4、有无咳嗽，发热等症状</text>
+      <radio-group class="radio-group" bindchange="radioChange" name="isDanger">
+        <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" color="#fff">
+          <text>{{item.name}}</text>
+        </radio>
+      </radio-group>
+      <text class="text" >5、今日体温</text>
+    <input class="input" name="temperature"></input>
 
-<button formType="submit" class="button">完成打卡</button>
+    <text class="text" >6、其他备注信息</text>
+    <input class="input" name="ps"></input>
+    </scroll-view>
+
+    <button formType="submit" class="button">完成打卡</button>
+  </view>
 </form>

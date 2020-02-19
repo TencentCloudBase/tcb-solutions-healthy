@@ -1,0 +1,84 @@
+/* components/weForm/weForm.wxss */
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e90ff;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.sub-title {
+  padding: 16px;
+  color: #fff;
+}
+
+.content {
+  width: 90%;
+  background-color: #f0fff0;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.question {
+  margin: 10px;
+}
+
+.qs-title {
+  margin: 10px auto;
+}
+
+/* 单选框 */
+
+.radio-group label {
+  display: block;
+  height: 56rpx;
+  line-height: 26rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  /* margin-left: 10px; */
+}
+
+radio {
+  width: 38rpx;
+}
+
+/* 单选框未选中 */
+
+radio .wx-radio-input {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+}
+
+/* 单选框选中后对勾样式 */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #0000cd;
+  border-color: #0000cd;
+}
+
+.bt-wrap {
+  margin: 28px 16px 8px;
+  padding-bottom: 20px;
+}
+
+.bt {
+  background-color: #1E90FF !important;
+}

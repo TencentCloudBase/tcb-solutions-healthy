@@ -1,4 +1,6 @@
-<view class="page-background">
+<weForm form-data="{{formData}}"  bindonAdd="onAdd">
+</weForm>
+<!-- <view class="page-background">
 
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__bd" style="width: 90%;margin: auto;">
@@ -172,4 +174,4 @@
      </form>
 </view>
 
-</view>
+</view> -->

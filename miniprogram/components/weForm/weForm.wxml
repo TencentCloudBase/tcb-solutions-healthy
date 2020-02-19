@@ -1,0 +1,57 @@
+<!--components/weForm/weForm.wxml-->
+<view class="container">
+  <text class="title">{{formData.title}}</text>
+  <text class="sub-title">{{formData.subTitle}}</text>
+  <form class="content" bindsubmit="onAdd">
+    <view class="question" wx:for="{{formData.qs}}" wx:for-index="idx" wx:for-item="list" wx:key='index+time'>
+      <view class="weui-cells__title qs-title">{{idx+1}}.{{list.name}}</view>
+      <!-- 文本框 -->
+      <view class="weui-cells weui-cells_after-title" wx:if="{{list.type==='text'}}">
+        <view class="weui-cell ">
+          <view class="weui-cell__bd">
+            <input class="weui-input" id="{{idx}}" name="name" bindinput="updateText" placeholder="{{list.placeholder}}" />
+          </view>
+        </view>
+      </view>
+      <!-- 单选题 -->
+      <radio-group id="{{idx}}" class="radio-group" wx:if="{{list.type==='radio'}}" bindchange="radioChange">
+        <label wx:for="{{list.items}}" wx:for-index="index" wx:for-item="item" wx:key="{date+index}">
+          <radio value="{{item.value}}" /> {{item.name}}
+        </label>
+      </radio-group>
+      <!-- 时间选择器 -->
+      <view class="weui-cells weui-cells_after-title" wx:if="{{list.type==='date'}}">
+        <view class="weui-cell ">
+          <view class="weui-cell__bd">
+            <picker id="{{idx}}" mode="date" name="date" value="{{date}}" start="2019-01-01" bindchange="dateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <!-- 地区选择器 -->
+      <view class="weui-cells weui-cells_after-title" wx:if="{{list.type==='region'}}">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd" style="margin-left:16px;">
+            <picker id="{{idx}}" mode="region" bindchange="changeRegion" value="{{index}}">
+              <view class="weui-select weui-select_in-select-after">{{region[0]}} - {{region[1]}} - {{region[2]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <!-- 区间选择器 -->
+      <view class="weui-cells weui-cells_after-title" wx:if="{{list.type==='range'}}">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd" style="margin-left:16px;">
+            <picker id="{{idx}}" name="range" value="{{rangeIndex}}" range="{{list.range}}" bindchange="rangeChange">
+              <view class="weui-select weui-select_in-select-after">{{list.range[rangeIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area bt-wrap">
+      <button class="weui-btn bt" type="primary" form-type="submit">确定</button>
+    </view>
+  </form>
+</view>

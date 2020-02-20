@@ -16,21 +16,20 @@ Page({
     checkedArr:[],
     isDanger:0
   },
-  checkboxChange(e){
-    this.setData({
-      checkedArr: e.detail.value
-    })
-  },
   radioChange(e){
     this.setData({
       isDanger:e.detail.value-0
     })
   },
   formSubmit: function (e) {
-    let form =  e.detail.value
-    console.log(form)
-    for(let key in form){
-      if (!form[key]){
+    let data =  e.detail.value
+    wx.showLoading({
+      title: '信息提交中',
+    })
+    const db = wx.cloud.database()
+    console.log(data)
+    for(let key in data){
+      if (!data[key]){
         wx.showToast({
           title: '请先完成表格',
           icon:'none',
@@ -39,5 +38,21 @@ Page({
         return
       }
     }
-  }
+    db.collection('checkin').add({
+      data,
+      success: res => {
+        wx.hideLoading()
+        wx.reLaunch({
+          url: '../msg/msg_success',
+        })
+      },
+      fail: err => {
+        wx.hideLoading()
+        console.error('打卡失败：', err)
+        wx.reLaunch({
+          url: '../msg/msg_fail',
+        })
+      }
+    })
+  },
 })

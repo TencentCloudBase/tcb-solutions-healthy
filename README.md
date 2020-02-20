@@ -1,6 +1,12 @@
 # 云开发 - 疫情期间 - 健康上报解决方案
 
+## 如何部署？
 
+1. Clone 项目到本地
+2. 修改 `project.config.json` 中的 appid 替换为你自己的 appid
+3. 使用微信开发者工具，导入项目
+4. 创建云数据库集合 `GOBACKINFO` 和 `checkin`
+5. 部署云函数
 
 
 
@@ -30,6 +36,6 @@
 
 
 
-
+## LICENSE
 
 Apache LICENSE

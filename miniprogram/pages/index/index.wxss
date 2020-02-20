@@ -75,7 +75,7 @@ page {
 
 
 .uploader-text, .tunnel-text {
-  width: 250rpx;
+  /* width: 250rpx; */
   line-height: 25rpx;
   font-size: 40rpx;
   margin-top: 100rpx;
@@ -191,23 +191,26 @@ page {
 }
 
 .index-headline-text {
-   width: 150rpx;
-  line-height: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 50rpx;
   text-align: left;
   font-weight:bold;
-  margin-top:50rpx;
   margin-right: 400rpx;
   color:  white;
+}
+
+.index-headline-text > .title {
+  margin-left: 10rpx;
 }
 
 .index-notes-text {
   width: 150rpx;
   line-height: 20rpx;
   font-size: 35rpx;
-  margin-top:30rpx;
   margin-right: 400rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 50rpx;
   text-align:left;
   color:  white;
 }

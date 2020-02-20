@@ -6,7 +6,7 @@ Component({
   properties: {
     formData: {
       type: Object,
-      value: {},
+      value: {}
     }
   },
 
@@ -23,11 +23,11 @@ Component({
   },
 
   observers: {
-    'formData': function(formData) {
-      console.log(111, formData)
+    formData: function(formData) {
+      console.log(111, formData);
       this.setData({
         qs: formData.qs
-      })
+      });
     }
   },
 
@@ -39,7 +39,7 @@ Component({
     updateText: function(e) {
       const index = +e.target.id;
       const value = e.detail.value;
-      this.data.qs[index].value = value
+      this.data.qs[index].value = value;
     },
     // 更新单选题的值
     radioChange: function(e) {
@@ -53,7 +53,7 @@ Component({
       const value = e.detail.value;
       this.setData({
         date: value
-      })
+      });
       this.data.qs[index].value = value;
     },
     // 更新所选地区
@@ -61,8 +61,8 @@ Component({
       const index = +e.target.id;
       const value = e.detail.value;
       this.setData({
-        'region': e.detail.value
-      })
+        region: e.detail.value
+      });
       this.data.qs[index].value = this.data.region;
     },
     // 改变范围
@@ -71,13 +71,12 @@ Component({
       const value = e.detail.value;
       this.setData({
         rangeIndex: value
-      })
+      });
       this.data.qs[index].value = this.data.rangeIndex;
     },
     // 提交数据
     onAdd: function(e) {
-      console.log(this.data.qs)
       this.triggerEvent('onAdd', this.data.qs);
     }
   }
-})
+});

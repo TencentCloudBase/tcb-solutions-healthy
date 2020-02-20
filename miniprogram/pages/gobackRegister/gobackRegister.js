@@ -5,31 +5,6 @@ const app = getApp()
 Page({
 
   data: {
-    // radioItems: [ //是否去过湖北
-    //   {
-    //     name: '是',
-    //     value: '0'
-    //   },
-    //   {
-    //     name: '否',
-    //     value: '1'
-    //   }
-    // ],
-    // checkboxItems: [{
-    //     name: '火车',
-    //     value: '0',
-    //     checked: true
-    //   },
-    //   {
-    //     name: '飞机',
-    //     value: '1'
-    //   }
-    // ],
-    // traffic: ["铁路", "飞机", "客运", "自驾", "渡轮"], //铁路/飞机/客运/自驾/渡轮
-    // trafficIndex: 0,
-    // array: ['美国', '中国', '巴西', '日本'],
-    // // region: ['湖北省', '武汉市', '江汉区'],
-    // index: 0,
     formData: {
       title: '返程登记',
       subTitle: '注意事项：作为用户和产品之间的桥梁，社交分享在产品的发展过程中扮演了重要角色',
@@ -172,7 +147,7 @@ Page({
         {
           name: '其他备注信息',
           type: 'text',
-          placeholder: '请输入工作地点',
+          placeholder: '请输入内容',
           value: ''
         }
       ]
@@ -239,23 +214,6 @@ Page({
 
   //返程信息提交
   onAddSec: function(formData) {
-    // const name = formData[0].value
-    // const place = formData[4].value
-    // var date = formData[5].value
-    // var traffic = formData[7].value
-    // var trainnumber = formData[8].value
-    // var bodystatusinfo = formData[12].value
-    // var otherManBodyInfo = formData[13].value
-    // var remark = e.detail.value.remark
-    // var goHBFlag = formData[2].value
-    // var workPlaceFlag = this.workPlaceFlag
-    // // var withIllTakeFlag = this.withIllTakeFlag
-    // // var contractillFlag = this.contractillFlag
-    // // var bodyStatusFlag = this.bodyStatusFlag
-    // // var goHareasHaveFlagBFlag = this.areasHaveFlag
-    // // var wentprovinces = e.detail.value.wentprovinces
-    // // var gobackwhere = this.gobackwhere
-
     wx.showLoading({
       title: '信息提交中',
     })

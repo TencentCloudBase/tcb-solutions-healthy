@@ -6,9 +6,7 @@
 2. 修改 `project.config.json` 中的 appid 替换为你自己的 appid
 3. 使用微信开发者工具，导入项目
 4. 创建云数据库集合 `GOBACKINFO` 和 `checkin`
-5. 部署云函数
-
-
+5. 开始使用
 
 ## 数据集合
 ### EPIDEMICINFO 返程信息登记表
